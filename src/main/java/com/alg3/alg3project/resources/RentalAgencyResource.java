@@ -4,9 +4,9 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.alg3.alg3project.domain.Vehicle;
-import com.alg3.alg3project.dto.VehicleDTO;
-import com.alg3.alg3project.services.VehicleService;
+import com.alg3.alg3project.domain.RentalAgency;
+import com.alg3.alg3project.dto.RentalAgencyDTO;
+import com.alg3.alg3project.services.RentalAgencyService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,44 +18,44 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
-@RequestMapping(value = "/vehicles")
-public class VehicleResource {
+@RequestMapping(value = "/rental_agencies")
+public class RentalAgencyResource {
     
     @Autowired
-    private VehicleService vehicleService;
+    private RentalAgencyService rentalAgencyService;
 
     @RequestMapping(method=RequestMethod.GET)
-    public ResponseEntity<List<VehicleDTO>> findAll() {
-        List<Vehicle> list = vehicleService.findAll();
-        List<VehicleDTO> listDto = list.stream().map(x -> new VehicleDTO(x)).collect(Collectors.toList());
+    public ResponseEntity<List<RentalAgencyDTO>> findAll() {
+        List<RentalAgency> list = rentalAgencyService.findAll();
+        List<RentalAgencyDTO> listDto = list.stream().map(x -> new RentalAgencyDTO(x)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public ResponseEntity<VehicleDTO> findById(@PathVariable String id) {
-        Vehicle obj = vehicleService.findById(id);
-        return ResponseEntity.ok().body(new VehicleDTO(obj));
+    public ResponseEntity<RentalAgencyDTO> findById(@PathVariable String id) {
+        RentalAgency obj = rentalAgencyService.findById(id);
+        return ResponseEntity.ok().body(new RentalAgencyDTO(obj));
     }
 
     @RequestMapping(method=RequestMethod.POST)
-    public ResponseEntity<Void> insert(@RequestBody VehicleDTO objDto) {
-        Vehicle obj = vehicleService.fromDTO(objDto);
-        obj = vehicleService.insert(obj);
+    public ResponseEntity<Void> insert(@RequestBody RentalAgencyDTO objDto) {
+        RentalAgency obj = rentalAgencyService.fromDTO(objDto);
+        obj = rentalAgencyService.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
     public ResponseEntity<Void> delete(@PathVariable String id) {
-        vehicleService.delete(id);
+        rentalAgencyService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
-    public ResponseEntity<Void> update(@RequestBody VehicleDTO objDto, @PathVariable String id) {
-        Vehicle obj = vehicleService.fromDTO(objDto);
+    public ResponseEntity<Void> update(@RequestBody RentalAgencyDTO objDto, @PathVariable String id) {
+        RentalAgency obj = rentalAgencyService.fromDTO(objDto);
         obj.setId(id);
-        obj = vehicleService.update(obj);
+        obj = rentalAgencyService.update(obj);
         return ResponseEntity.noContent().build();
     }
 }

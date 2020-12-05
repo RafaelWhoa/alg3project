@@ -3,26 +3,30 @@ package com.alg3.alg3project.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.alg3.alg3project.dto.RentalAgencyDTO;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Vehicle implements Serializable {
- 
+
     private static final long serialVersionUID = 1L;
 
     @Id
     private String id;
-    private String Manufacturer;
-    private String Model;
+    private String manufacturer;
+    private String model;
+    private RentalAgencyDTO rentalAgency;
 
     public Vehicle() {
     }
 
-    public Vehicle(String id, String Manufacturer, String Model) {
+    public Vehicle(String id, String Manufacturer, String Model, RentalAgencyDTO rentalAgency) {
         this.id = id;
-        this.Manufacturer = Manufacturer;
-        this.Model = Model;
+        this.manufacturer = Manufacturer;
+        this.model = Model;
+        this.rentalAgency = rentalAgency;
     }
 
     public String getId() {
@@ -34,20 +38,29 @@ public class Vehicle implements Serializable {
     }
 
     public String getManufacturer() {
-        return this.Manufacturer;
+        return this.manufacturer;
     }
 
     public void setManufacturer(String Manufacturer) {
-        this.Manufacturer = Manufacturer;
+        this.manufacturer = Manufacturer;
     }
 
     public String getModel() {
-        return this.Model;
+        return this.model;
     }
 
     public void setModel(String Model) {
-        this.Model = Model;
+        this.model = Model;
     }
+
+    public RentalAgencyDTO getRentalAgency() {
+        return rentalAgency;
+    }
+
+    public void setRentalAgency(RentalAgencyDTO rentalAgency) {
+        this.rentalAgency = rentalAgency;
+    }
+
 
     @Override
     public boolean equals(Object o) {
