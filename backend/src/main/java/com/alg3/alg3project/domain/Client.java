@@ -10,25 +10,25 @@ public class Client {
     
 
     @Id
-    private String id;
+    private String cpf;
     private String name;
     private String email;
 
     public Client() {
     }
 
-    public Client(String id, String name, String email) {
-        this.id = id;
+    public Client(String cpf, String name, String email) {
+        this.cpf = cpf;
         this.name = name;
         this.email = email;
     }
 
     public String getId() {
-        return this.id;
+        return this.cpf;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getName() {
@@ -55,12 +55,12 @@ public class Client {
             return false;
         }
         Client client = (Client) o;
-        return Objects.equals(id, client.id);
+        return Objects.equals(cpf, client.cpf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(cpf);
     }
 
 }

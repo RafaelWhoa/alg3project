@@ -8,7 +8,7 @@ public class ClientDTO implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
-    private String id;
+    private String cpf;
     private String name;
     private String email;
 
@@ -16,17 +16,17 @@ public class ClientDTO implements Serializable {
     }
 
     public ClientDTO(Client obj) {
-        id = obj.getId();
+        cpf = obj.getId();
         name = obj.getName();
         email = obj.getEmail();
     }
 
     public String getId() {
-        return this.id;
+        return this.cpf;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.cpf = id;
     }
 
     public String getName() {
