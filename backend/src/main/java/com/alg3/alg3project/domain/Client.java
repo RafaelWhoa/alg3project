@@ -3,6 +3,8 @@ package com.alg3.alg3project.domain;
 import java.util.Date;
 import java.util.Objects;
 
+import com.alg3.alg3project.dto.VehicleDTO;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,17 +19,19 @@ public class Client {
     private Date birthDate;
     private String address;
     private String phone;
+    private VehicleDTO vehicleRented;
 
     public Client() {
     }
 
-    public Client(String cpf, String name, String email, Date birthDate, String address, String phone) {
+    public Client(String cpf, String name, String email, Date birthDate, String address, String phone, VehicleDTO vehicleRented) {
         this.cpf = cpf;
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
         this.address = address;
         this.phone = phone;
+        this.vehicleRented = vehicleRented;
     }
     
     public String getId() {
@@ -76,6 +80,14 @@ public class Client {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public VehicleDTO getVehicleRented() {
+        return this.vehicleRented;
+    }
+
+    public void setVehicleRented(VehicleDTO carRented) {
+        this.vehicleRented = carRented;
     }
 
     @Override

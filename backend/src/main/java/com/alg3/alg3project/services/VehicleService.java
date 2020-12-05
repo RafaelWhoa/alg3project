@@ -47,6 +47,7 @@ public class VehicleService {
     }
 
     public Vehicle fromDTO(VehicleDTO objDto) {
-        return new Vehicle(objDto.getId(), objDto.getManufacturer(), objDto.getModel(), objDto.getRentalAgency());
+        return new Vehicle(objDto.getId(), objDto.getLicensePlate(), objDto.getManufacturer(), objDto.getModel(),
+         objDto.getCategory(), objDto.getPricePerHour(), objDto.getPricePerDay(), objDto.getRentalAgency(), objDto.getRentedBy());
     }
 }

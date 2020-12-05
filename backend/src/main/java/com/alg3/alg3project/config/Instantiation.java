@@ -32,9 +32,9 @@ public class Instantiation implements CommandLineRunner {
         
         clientRepository.deleteAll();
 
-        Client maria = new Client(null, "Maria Brown", "maria@gmail.com", new Date(), "Rua 2", "555-555-555");
-        Client alex = new Client(null, "Alex Green", "alex@gmail.com", new Date(), "Rua 2", "555-555-555");
-        Client bob = new Client(null, "Bob Grey", "bob@gmail.com", new Date(), "Rua 2", "555-555-555");
+        Client maria = new Client(null, "Maria Brown", "maria@gmail.com", new Date(), "Rua 2", "555-555-555", null);
+        Client alex = new Client(null, "Alex Green", "alex@gmail.com", new Date(), "Rua 2", "555-555-555", null);
+        Client bob = new Client(null, "Bob Grey", "bob@gmail.com", new Date(), "Rua 2", "555-555-555", null);
         clientRepository.saveAll(Arrays.asList(maria, alex, bob));
 
         rentalAgencyRepository.deleteAll();
@@ -44,7 +44,7 @@ public class Instantiation implements CommandLineRunner {
 
         vehicleRepository.deleteAll();
 
-        Vehicle car1 = new Vehicle(null, "Chevrolet", "Onix", new RentalAgencyDTO(ra1));
+        Vehicle car1 = new Vehicle(null, "KKK-5555", "Chevrolet", "Onix", "Compact", 100.00, 200.00, new RentalAgencyDTO(ra1), null);
         vehicleRepository.saveAll(Arrays.asList(car1));
 
         

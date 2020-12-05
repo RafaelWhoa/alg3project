@@ -15,6 +15,7 @@ public class ClientDTO implements Serializable {
     private Date birthDate;
     private String address;
     private String phone;
+    private VehicleDTO vehicleRented;
 
     public ClientDTO() {
     }
@@ -26,6 +27,7 @@ public class ClientDTO implements Serializable {
         birthDate = obj.getBirthDate();
         address = obj.getAddress();
         phone = obj.getPhone();
+        vehicleRented = obj.getVehicleRented();
     }
 
     public String getId() {
@@ -74,6 +76,14 @@ public class ClientDTO implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public VehicleDTO getVehicleRented() {
+        return this.vehicleRented;
+    }
+
+    public void setVehicleRented(VehicleDTO vehicleRented) {
+        this.vehicleRented = vehicleRented;
     }
 
 }

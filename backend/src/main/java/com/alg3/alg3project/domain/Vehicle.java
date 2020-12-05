@@ -3,6 +3,7 @@ package com.alg3.alg3project.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.alg3.alg3project.dto.ClientDTO;
 import com.alg3.alg3project.dto.RentalAgencyDTO;
 
 import org.springframework.data.annotation.Id;
@@ -15,18 +16,28 @@ public class Vehicle implements Serializable {
 
     @Id
     private String id;
+    private String licensePlate;
     private String manufacturer;
     private String model;
+    private String category;
+    private Double pricePerHour;
+    private Double pricePerDay;
     private RentalAgencyDTO rentalAgency;
+    private ClientDTO rentedBy;
 
     public Vehicle() {
     }
 
-    public Vehicle(String id, String Manufacturer, String Model, RentalAgencyDTO rentalAgency) {
+    public Vehicle(String id, String licensePlate, String manufacturer, String model, String category, Double pricePerHour, Double pricePerDay, RentalAgencyDTO rentalAgency, ClientDTO rentedBy) {
         this.id = id;
-        this.manufacturer = Manufacturer;
-        this.model = Model;
+        this.licensePlate = licensePlate;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.category = category;
+        this.pricePerHour = pricePerHour;
+        this.pricePerDay = pricePerDay;
         this.rentalAgency = rentalAgency;
+        this.rentedBy = rentedBy;
     }
 
     public String getId() {
@@ -61,6 +72,45 @@ public class Vehicle implements Serializable {
         this.rentalAgency = rentalAgency;
     }
 
+    public String getLicensePlate() {
+        return this.licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Double getPricePerHour() {
+        return this.pricePerHour;
+    }
+
+    public void setPricePerHour(Double pricePerHour) {
+        this.pricePerHour = pricePerHour;
+    }
+
+    public Double getPricePerDay() {
+        return this.pricePerDay;
+    }
+
+    public void setPricePerDay(Double pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    public ClientDTO getRentedBy() {
+        return this.rentedBy;
+    }
+
+    public void setRentedBy(ClientDTO rentedBy) {
+        this.rentedBy = rentedBy;
+    }
 
     @Override
     public boolean equals(Object o) {
