@@ -52,4 +52,12 @@ public class ClientResource {
         clientService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @RequestMapping(value="/{id}", method=RequestMethod.PUT)
+    public ResponseEntity<Void> update(@RequestBody ClientDTO objDto, @PathVariable String id) {
+        Client obj = clientService.fromDTO(objDto);
+        obj.setId(id);
+        obj = clientService.update(obj);
+        return ResponseEntity.noContent().build();
+    }
 }

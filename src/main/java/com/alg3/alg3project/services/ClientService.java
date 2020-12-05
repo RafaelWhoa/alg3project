@@ -35,6 +35,17 @@ public class ClientService {
         clientRepo.deleteById(id);
     }
 
+    public Client update(Client obj) {
+        Client newObj = findById(obj.getId());
+        updateData(newObj, obj);
+        return clientRepo.save(newObj);
+    }
+
+    private void updateData(Client newObj, Client obj) {
+        newObj.setName(obj.getName());
+        newObj.setEmail(obj.getEmail());
+    }
+
     public Client fromDTO(ClientDTO objDto) {
         return new Client(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
