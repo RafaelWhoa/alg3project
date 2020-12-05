@@ -1,6 +1,7 @@
 package com.alg3.alg3project.config;
 
 import java.util.Arrays;
+import java.util.Date;
 
 import com.alg3.alg3project.domain.Client;
 import com.alg3.alg3project.domain.RentalAgency;
@@ -31,9 +32,9 @@ public class Instantiation implements CommandLineRunner {
         
         clientRepository.deleteAll();
 
-        Client maria = new Client(null, "Maria Brown", "maria@gmail.com");
-        Client alex = new Client(null, "Alex Green", "alex@gmail.com");
-        Client bob = new Client(null, "Bob Grey", "bob@gmail.com");
+        Client maria = new Client(null, "Maria Brown", "maria@gmail.com", new Date(), "Rua 2", "555-555-555");
+        Client alex = new Client(null, "Alex Green", "alex@gmail.com", new Date(), "Rua 2", "555-555-555");
+        Client bob = new Client(null, "Bob Grey", "bob@gmail.com", new Date(), "Rua 2", "555-555-555");
         clientRepository.saveAll(Arrays.asList(maria, alex, bob));
 
         rentalAgencyRepository.deleteAll();

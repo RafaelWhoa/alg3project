@@ -47,6 +47,6 @@ public class ClientService {
     }
 
     public Client fromDTO(ClientDTO objDto) {
-        return new Client(objDto.getId(), objDto.getName(), objDto.getEmail());
+        return new Client(objDto.getId(), objDto.getName(), objDto.getEmail(), objDto.getBirthDate(), objDto.getAddress(), objDto.getPhone());
     }
 }

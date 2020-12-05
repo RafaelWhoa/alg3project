@@ -1,6 +1,7 @@
 package com.alg3.alg3project.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.alg3.alg3project.domain.Client;
 
@@ -11,6 +12,9 @@ public class ClientDTO implements Serializable {
     private String cpf;
     private String name;
     private String email;
+    private Date birthDate;
+    private String address;
+    private String phone;
 
     public ClientDTO() {
     }
@@ -19,6 +23,9 @@ public class ClientDTO implements Serializable {
         cpf = obj.getId();
         name = obj.getName();
         email = obj.getEmail();
+        birthDate = obj.getBirthDate();
+        address = obj.getAddress();
+        phone = obj.getPhone();
     }
 
     public String getId() {
@@ -43,6 +50,30 @@ public class ClientDTO implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getBirthDate() {
+        return this.birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 }
