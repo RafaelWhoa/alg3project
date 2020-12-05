@@ -11,6 +11,7 @@ import com.alg3.alg3project.services.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,5 +28,11 @@ public class ClientResource {
         List<Client> list = clientService.findAll();
         List<ClientDTO> listDto = list.stream().map(x -> new ClientDTO(x)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
+    }
+
+    @RequestMapping(value="/{id}", method=RequestMethod.GET)
+    public ResponseEntity<ClientDTO> findById(@PathVariable String id) {
+        Client obj = clientService.findById(id);
+        return ResponseEntity.ok().body(new ClientDTO(obj));
     }
 }
