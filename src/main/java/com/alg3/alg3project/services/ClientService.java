@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.alg3.alg3project.domain.Client;
+import com.alg3.alg3project.dto.ClientDTO;
 import com.alg3.alg3project.repository.ClientRepository;
 import com.alg3.alg3project.services.exception.ObjectNotFoundException;
 
@@ -24,4 +25,12 @@ public class ClientService {
         Optional<Client> obj = clientRepo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Object not found!"));
     }  
+
+    public Client insert(Client client) {
+        return clientRepo.insert(client);
+    }
+
+    public Client fromDTO(ClientDTO objDto) {
+        return new Client(objDto.getId(), objDto.getName(), objDto.getEmail());
+    }
 }
