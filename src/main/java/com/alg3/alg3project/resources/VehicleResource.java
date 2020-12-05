@@ -19,14 +19,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping(value = "/clients")
-public class ClientResource {
+public class VehicleResource {
     
     @Autowired
-    private ClientService clientService;
+    private VehicleService clientService;
 
     @RequestMapping(method=RequestMethod.GET)
     public ResponseEntity<List<ClientDTO>> findAll() {
-        List<Client> list = clientService.findAll();
+        List<Vehicle> list = clientService.findAll();
         List<ClientDTO> listDto = list.stream().map(x -> new ClientDTO(x)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
     }
