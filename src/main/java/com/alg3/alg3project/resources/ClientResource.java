@@ -3,8 +3,10 @@ package com.alg3.alg3project.resources;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.alg3.alg3project.domain.Client;
+import com.alg3.alg3project.dto.ClientDTO;
 import com.alg3.alg3project.services.ClientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +23,9 @@ public class ClientResource {
     private ClientService clientService;
 
     @RequestMapping(method=RequestMethod.GET)
-    public ResponseEntity<List<Client>> findAll() {
+    public ResponseEntity<List<ClientDTO>> findAll() {
         List<Client> list = clientService.findAll();
-        return ResponseEntity.ok().body(list);
+        List<ClientDTO> listDto = list.stream().map(x -> new ClientDTO(x)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(listDto);
     }
 }
