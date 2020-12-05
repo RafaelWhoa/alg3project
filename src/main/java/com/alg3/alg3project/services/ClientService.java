@@ -30,6 +30,11 @@ public class ClientService {
         return clientRepo.insert(client);
     }
 
+    public void delete(String id) {
+        findById(id);
+        clientRepo.deleteById(id);
+    }
+
     public Client fromDTO(ClientDTO objDto) {
         return new Client(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
