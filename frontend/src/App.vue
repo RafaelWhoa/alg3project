@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld msg="Teste"/>
+  <clients/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Clients from './components/clients.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Clients
   }
 }
 </script>
