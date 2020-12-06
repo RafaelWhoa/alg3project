@@ -16,7 +16,7 @@ export default {
   },
   methods:{
     async search_data(){
-      let result = await axios({method:"GET", url:"localhost:8080/clients"});
+      let result = await axios({method:"GET", url:"http://localhost:9090/clients"});
       console.log(result.data)
       this.clients = result.data;
     }

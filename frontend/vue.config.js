@@ -1,5 +1,5 @@
 module.exports = {     
   devServer: 
   {         
-    port: 6058    
+    port: 8080    
   }}

@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Alg3projectApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Alg3projectApplication.class, args);
 	}
