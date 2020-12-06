@@ -3,6 +3,7 @@ package com.alg3.alg3project.domain;
 import java.util.Date;
 import java.util.Objects;
 
+
 import com.alg3.alg3project.dto.VehicleDTO;
 
 import org.springframework.data.annotation.Id;
@@ -14,6 +15,8 @@ public class Client {
 
     @Id
     private String cpf;
+
+
     private String name;
     private String email;
     private Date birthDate;
@@ -34,11 +37,11 @@ public class Client {
         this.vehicleRented = vehicleRented;
     }
     
-    public String getId() {
+    public String getCpf() {
         return this.cpf;
     }
 
-    public void setId(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -104,6 +107,19 @@ public class Client {
     @Override
     public int hashCode() {
         return Objects.hashCode(cpf);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " cpf='" + getCpf() + "'" +
+            ", name='" + getName() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", birthDate='" + getBirthDate() + "'" +
+            ", address='" + getAddress() + "'" +
+            ", phone='" + getPhone() + "'" +
+            ", vehicleRented='" + getVehicleRented() + "'" +
+            "}";
     }
 
 }

@@ -21,7 +21,7 @@ public class ClientDTO implements Serializable {
     }
 
     public ClientDTO(Client obj) {
-        cpf = obj.getId();
+        cpf = obj.getCpf();
         name = obj.getName();
         email = obj.getEmail();
         birthDate = obj.getBirthDate();
@@ -30,11 +30,11 @@ public class ClientDTO implements Serializable {
         vehicleRented = obj.getVehicleRented();
     }
 
-    public String getId() {
+    public String getCpf() {
         return this.cpf;
     }
 
-    public void setId(String id) {
+    public void setCpf(String id) {
         this.cpf = id;
     }
 

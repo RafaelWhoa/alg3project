@@ -36,7 +36,7 @@ public class ClientService {
     }
 
     public Client update(Client obj) {
-        Client newObj = findById(obj.getId());
+        Client newObj = findById(obj.getCpf());
         updateData(newObj, obj);
         return clientRepo.save(newObj);
     }
@@ -47,6 +47,6 @@ public class ClientService {
     }
 
     public Client fromDTO(ClientDTO objDto) {
-        return new Client(objDto.getId(), objDto.getName(), objDto.getEmail(), objDto.getBirthDate(), objDto.getAddress(), objDto.getPhone(), objDto.getVehicleRented());
+        return new Client(objDto.getCpf(), objDto.getName(), objDto.getEmail(), objDto.getBirthDate(), objDto.getAddress(), objDto.getPhone(), objDto.getVehicleRented());
     }
 }
