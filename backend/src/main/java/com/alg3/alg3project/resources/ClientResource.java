@@ -30,7 +30,11 @@ public class ClientResource {
     public ResponseEntity<List<ClientDTO>> findAll() {
         List<Client> list = clientService.findAll();
         List<ClientDTO> listDto = list.stream().map(x -> new ClientDTO(x)).collect(Collectors.toList());
+<<<<<<< HEAD
         return ResponseEntity.ok()./*header("Access-Control-Allow-Origin", "*").header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept").*/body(listDto);
+=======
+        return ResponseEntity.ok().body(listDto);
+>>>>>>> e03c0c1785ce47bb8779f6f5f8e9d72d0590eb62
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET)

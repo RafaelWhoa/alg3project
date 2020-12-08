@@ -41,6 +41,19 @@ public class Instantiation implements CommandLineRunner {
 
         RentalAgency ra1 = new RentalAgency(null, "Rental-1", "Rua 1");
         rentalAgencyRepository.saveAll(Arrays.asList(ra1));
+<<<<<<< HEAD
+=======
+
+        vehicleRepository.deleteAll();
+
+        Vehicle car1 = new Vehicle(null, "KKK-5555", "Chevrolet", "Onix", "Compact", 100.00, 200.00, new RentalAgencyDTO(ra1), null);
+        Vehicle car2 = new Vehicle(null, "KKK-5556", "Ford", "Ka", "Compact", 100.00, 200.00, new RentalAgencyDTO(ra1), null);
+        Vehicle car3 = new Vehicle(null, "KKK-5557", "Nissan", "Kicks", "SUV", 100.00, 200.00, new RentalAgencyDTO(ra1), null);
+        Vehicle car4 = new Vehicle(null, "KKK-5558", "Volvo", "XC40", "SUV", 100.00, 200.00, new RentalAgencyDTO(ra1), null);
+        Vehicle car5 = new Vehicle(null, "KKK-5559", "Toyota", "Corolla", "Sedan", 100.00, 200.00, new RentalAgencyDTO(ra1), null);
+        vehicleRepository.saveAll(Arrays.asList(car1, car2, car3, car4, car5));
+
+>>>>>>> e03c0c1785ce47bb8779f6f5f8e9d72d0590eb62
         
 
     }
