@@ -1,6 +1,12 @@
 <template>
   <div>
-    {{ clients }}
+    <table>
+      <tr v-for="client in clients" :key="client.cpf">
+        <td>{{ client.cpf }}</td>
+        <td>{{ client.name }}</td>
+        <td>{{ client.email }}</td>
+      </tr>
+    </table>
   </div> 
 </template>
 

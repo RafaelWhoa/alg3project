@@ -1,14 +1,17 @@
 <template>
-  <clients/>
+  <div class="container">
+    <vehicles/>
+  </div>
 </template>
 
 <script>
-import Clients from './components/clients.vue'
+import Vehicles from './components/vehicles.vue'
+
 
 export default {
   name: 'App',
   components: {
-    Clients
+    Vehicles
   }
 }
 </script>
