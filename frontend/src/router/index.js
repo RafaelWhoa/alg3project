@@ -18,7 +18,7 @@ const routes = [
     component: Aluga
   },
   {
-    path: '/alugar/:id/cadastro', component: Select,
+    path: '/alugar/cadastro', component: Select,
     name: 'id'
   }
   

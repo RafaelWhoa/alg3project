@@ -30,6 +30,7 @@ public class VehicleDTO implements Serializable {
         rentalAgency = obj.getRentalAgency();
         pricePerHour = obj.getPricePerHour();
         pricePerDay = obj.getPricePerDay();
+        rentedBy = obj.getRentedBy();
     }
 
     public String getId() {

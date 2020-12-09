@@ -30,6 +30,10 @@ public class ClientService {
         return clientRepo.insert(client);
     }
 
+    public Client cadastro(Client client) {
+        return clientRepo.insert(client);
+    }
+
     public void delete(String id) {
         findById(id);
         clientRepo.deleteById(id);
